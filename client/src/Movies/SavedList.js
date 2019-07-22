@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// const [savedMovie, setSavedMovie] = useState('');
 
 const SavedList = props => (
   <div className="saved-list">
