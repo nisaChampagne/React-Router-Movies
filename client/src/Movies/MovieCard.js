@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MovieCard(props) {
   if (!props.movie) {
-    return <div>Loading....</div>;
+    return <div>Gimme a minute....</div>;
   }
 
   const { title, director, metascore, stars } = props.movie;
