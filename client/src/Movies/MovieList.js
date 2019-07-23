@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import MovieCard from './MovieCard';
 import axios from 'axios';
 

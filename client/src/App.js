@@ -6,13 +6,13 @@ import './index.css';
 
 import SavedList from './Movies/SavedList';
 
-const App = () => {
+export default function App(){
   const [savedList, setSavedList] = useState( [] );
 
   function addToSavedList(movie) {
-    const movieNames = savedList.map(movie => movie.title)
+    const movieLibrary = savedList.map(movie => movie.title)
 
-    if (!movieNames.includes(movie.title)) { 
+    if (!movieLibrary.includes(movie.title)) { 
       setSavedList([...savedList, movie]);
     }
   };
@@ -26,4 +26,3 @@ const App = () => {
   );
 };
 
-export default App;

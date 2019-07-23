@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
 
 export default function MovieCard(props) {
   if (!props.movie) {
@@ -8,14 +10,12 @@ export default function MovieCard(props) {
   const { title, director, metascore, stars } = props.movie;
   console.log(props)
   console.log(props.saveMovie)
-  const onClick = () => {
-    console.log(props)
-    props.saveMovie();
-  };
 
   return (
     <div className="movie-card">
+      <Link to='/movies/:id'>
       <h2>{title}</h2>
+      </Link>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -30,7 +30,7 @@ export default function MovieCard(props) {
           {star}
         </div>
       ))}
-      <div onClick={onClick} className="save-button">Save</div>
+      <div onClick={props.saveMovie} className="save-button">Save</div>
     </div>
   );
 }
