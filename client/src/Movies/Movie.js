@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import SavedList from './SavedList';
 import MovieCard from './MovieCard';
 import axios from 'axios';
 
@@ -8,7 +7,6 @@ export default function Movie(props) {
  
   useEffect(() => {
     const id = props.match.params.id;
-
        axios
         .get(`http://localhost:5000/api/movies/${id}`)
         .then(response => {
@@ -31,8 +29,7 @@ export default function Movie(props) {
 
   return (
     <div>
-    <div className="save-button">Save</div>
-    <MovieCard movie={movie} />
+    <MovieCard movie={movie} saveMovie={saveMovie} />
     </div>
   );
 }

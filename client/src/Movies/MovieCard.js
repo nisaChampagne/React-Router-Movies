@@ -6,6 +6,12 @@ export default function MovieCard(props) {
   }
 
   const { title, director, metascore, stars } = props.movie;
+  console.log(props)
+  console.log(props.saveMovie)
+  const onClick = () => {
+    console.log(props)
+    props.saveMovie();
+  };
 
   return (
     <div className="movie-card">
@@ -24,6 +30,7 @@ export default function MovieCard(props) {
           {star}
         </div>
       ))}
+      <div onClick={onClick} className="save-button">Save</div>
     </div>
   );
 }
